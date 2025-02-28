@@ -33,7 +33,7 @@ void printNeighbours(const unordered_map<int, vector<int>> &graph) {
     }
 }
 
-void bfs(vector<bool> &visited, const int &root, queue<int> &q, const unordered_map<int, vector<int>> &graph) {
+void bfs(const unordered_map<int, vector<int>> &graph, const int &root, queue<int> &q, vector<bool> &visited) {
     
     visited[root] = true;
     q.push(root);
@@ -68,14 +68,13 @@ int main() {
     
     //Reading the graph from input
     unordered_map<int, vector<int>> graph = readGraph(n, m, root);
-    
     queue<int> q;
     vector<bool> visited(n+1, false);
 
     //Printing the neighbours 
     printNeighbours(graph);
 
-    bfs(visited, root, q, graph);
+    bfs(graph, root, q, visited);
     
     return 0;
 }
