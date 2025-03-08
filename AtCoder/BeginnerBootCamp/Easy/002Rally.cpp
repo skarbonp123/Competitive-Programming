@@ -24,7 +24,7 @@ int main() {
         total += pow((x[i] - sum), 2);
     }
 
-    cout << total;
+    cout << total << "\n";
     
     return 0;
 }
