@@ -6,11 +6,11 @@ int main() {
     int a, b;
     cin >> a >> b;
 
-    int sockets = 1;
+    int s = 1;
     int count = 0;
 
-    while (sockets < b) {
-        sockets += (a-1);
+    while (s < b) {
+        s += (a-1);
         count++;
     }
 
