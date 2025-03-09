@@ -1,11 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
+#typedef long long ll;
 
 int main() {
     //Bishop can move on about half of the squares
 
-    int H, W; cin >> H >> W;
+    ll H, W; cin >> H >> W;
     
+
     
     return 0;
 }
