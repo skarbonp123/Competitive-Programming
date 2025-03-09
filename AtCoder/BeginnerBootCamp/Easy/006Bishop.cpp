@@ -10,7 +10,7 @@ int main() {
     if (H == 1 || W == 1) {
         cout << 1 << '\n';
     } else { 
-        cout << (H * W + 1) / 2 << '\n';
+        cout << (H * W + 1) / 2 << "\n";
     }
     
     return 0;
