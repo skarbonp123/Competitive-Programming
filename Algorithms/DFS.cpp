@@ -10,9 +10,12 @@ unordered_map<int, vector<int>> readGraph(int &n, int &m, int &root) {
         int u,v;
         cin >> u >> v;
 
+        // Undirected graph
         graph[u].push_back(v);
         graph[v].push_back(u);
 
+        // Directed graph
+        // graph[u].push_back(v);
     }
 
     cin >> root;
@@ -31,22 +34,15 @@ void printNeighbours(const unordered_map<int, vector<int>> &graph) {
     }
 }
 
-void dfs(const unordered_map<int, vector<int>> &graph, const int &root, stack<int> &s, vector<bool> &visited) {
+void dfs_recursive(const unordered_map<int, vector<int>> &graph, const int &root, vector<bool> &visited, const int &n) {
     
     visited[root] = true;
-    s.push(root);
 
-    cout << root << " ";
+    cout << root << ' ';
     
-    while (!s.empty()) {
-        int node = s.top();
-        s.pop();
-
-        for (int neighbour : graph.at(node)) {
-            if (!visited[neighbour]) {
-                visited[neighbour] = true;
-                s.push(neighbour);
-            }
+    for (int neighbour : graph.at(root)) {
+        if (!visited[neighbour]) {
+            dfs_recursive(graph, neighbour, visited, n);
         }
     }
 }
@@ -57,13 +53,12 @@ int main() {
     int n, m, root;
 
     unordered_map<int, vector<int>> graph = readGraph(n, m, root);
-    stack<int> s;
-    vector<bool> visited;
+    vector<bool> visited(n+1, false);
 
-    printNeighbours(graph);
+    // printNeighbours(graph);
 
-    dfs(graph, root, s, visited);
-
-
+    cout << "DFS from source: " << root << '\n';
+    dfs_recursive(graph, root, visited, n);
+    
     return 0;
 }
