@@ -1,2 +1,7 @@
 # Algorithms
-This will be a folder where I store my implementations of algorithms such as BFS, DFS, Dijkstra's, BinarySearch and whatever else.
+This will be a folder where I store my implementations of different algorithms such as:
+- Greedy Algorithms
+- Divide and Conquer
+- Dynammic Programming
+- Graph Algorithms
+- Searching and Sorting
