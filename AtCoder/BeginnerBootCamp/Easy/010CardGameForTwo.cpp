@@ -9,7 +9,6 @@ int main() {
     cin.tie(0);
     
     int N; cin>>N;
-
     vector<int> A(N);
 
     for (int i = 0; i < N; i++) {
