@@ -12,8 +12,6 @@ long long monster_divide(long long H) {
     } else {
         return 0;
     }
-
-
 }
 
 int main() {
