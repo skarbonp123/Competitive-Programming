@@ -3,10 +3,8 @@ using namespace std;
 
 
 int main() {
-
     string w;
     cin >> w;
-
     map<char, int> count;
 
     for (char c : w) {
