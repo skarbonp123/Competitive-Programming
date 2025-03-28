@@ -19,6 +19,7 @@ int main() {
     cin.tie(0);
 
     long long H; cin >> H;
+    
 
     cout << monster_divide(H) << '\n';
 }
