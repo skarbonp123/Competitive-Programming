@@ -7,16 +7,22 @@ if [ -z "$1" ]; then
 fi
 
 # File without extension
-file="${1%.*}"
+
+base_name=$(basename "$1" .cpp)
+short_name=${base_name:3:3}  # 4th to 6th characters
 
 # Compile with g++, show errors if any
-g++ -std=c++17 -O2 -Wall "$1" -o "$file.out"
+g++ -std=c++17 -O2 -Wall "$1" -o "$short_name.out"
 if [ $? -ne 0 ]; then
     echo "Compilation failed"
     exit 1
 fi
 
 # Run the executable
-echo "Running $file.out..."
+echo " "
+echo "Running $short_name"
 echo "--------------------------"
-"./$file.out"
+echo "Input:"
+"./$short_name.out"
+
+rm "$short_name.out"
