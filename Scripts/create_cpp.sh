@@ -3,7 +3,7 @@ echo '/**' >> $1.cpp
 echo ' *    author: skarbonp' >> $1.cpp
 echo '**/' >> $1.cpp
 echo '#include <bits/stdc++.h>' >> $1.cpp
-echo 'typedef long long ll' >> $1.cpp
+echo 'typedef long long ll;' >> $1.cpp
 echo 'using namespace std;' >> $1.cpp
 echo '' >> $1.cpp
 echo 'int main() {' >> $1.cpp
