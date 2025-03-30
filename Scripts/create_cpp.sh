@@ -1,17 +1,37 @@
 #!/bin/bash
-echo '/**' >> $1.cpp
-echo ' *    author: skarbonp' >> $1.cpp
-echo '**/' >> $1.cpp
-echo '#include <bits/stdc++.h>' >> $1.cpp
-echo 'typedef long long ll;' >> $1.cpp
-echo 'using namespace std;' >> $1.cpp
-echo '' >> $1.cpp
-echo 'int main() {' >> $1.cpp
-echo '    ios::sync_with_stdio(0);' >> $1.cpp
-echo '    cin.tie(0);' >> $1.cpp
-echo '    ' >> $1.cpp
-echo '    ' >> $1.cpp
-echo '    ' >> $1.cpp
-echo '    return 0;' >> $1.cpp
-echo '}' >> $1.cpp
 
+if [ -z "$1" ]; then
+    echo "Usage: cpp <filename>"
+    exit 1
+fi
+
+if [[ "$1" == *.cpp ]]; then
+    file="$1"
+else
+    file="$1.cpp"
+fi
+
+if [ -e "$file" ]; then
+    echo "$file already exists. Opening it..."
+else
+    echo '/**' >> "$file"
+    echo ' *    author: skarbonp' >> "$file"
+    echo '**/' >> "$file"
+    echo '#include <bits/stdc++.h>' >> "$file"
+    echo 'typedef long long ll;' >> "$file"
+    echo 'using namespace std;' >> "$file"
+    echo '' >> "$file"
+    echo 'int main() {' >> "$file"
+    echo '    ios::sync_with_stdio(0);' >> "$file"
+    echo '    cin.tie(0);' >> "$file"
+    echo '    ' >> "$file"
+    echo '    ' >> "$file"
+    echo '    ' >> "$file"
+    echo '    return 0;' >> "$file"
+    echo '}' >> "$file"
+
+    echo "Created $file"
+fi
+
+# Open in VS Code
+code "$file"
