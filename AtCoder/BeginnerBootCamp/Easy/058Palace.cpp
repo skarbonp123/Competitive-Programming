@@ -14,7 +14,7 @@ int main() {
     int index = 0;
     double min_diff = DBL_MAX;
     
-    for (int i = 0; i < N; i++) {
+    for (int i = 1; i <= N; i++) {
         int h; cin >> h;
         double temp = T - h * 0.006;
         double diff = abs(A - temp);
@@ -25,7 +25,7 @@ int main() {
         }
     }
 
-    cout << index + 1 << '\n';
+    cout << index << '\n';
 
     
     return 0;
