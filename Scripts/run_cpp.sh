@@ -12,7 +12,7 @@ base_name=$(basename "$1" .cpp)
 short_name=${base_name:3:3}  # 4th to 6th characters
 
 # Avoid reserved Windows device names
-if [[ "$short_name" =~ ^(con|prn|aux|nul|com[1-9]|lpt[1-9])$ ]]; then
+if [[ "${short_name,,}" =~ ^(con|prn|aux|nul|com[1-9]|lpt[1-9])$ ]]; then
     short_name="safe_${short_name}"
 fi
 
