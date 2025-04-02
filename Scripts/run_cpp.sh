@@ -11,6 +11,11 @@ fi
 base_name=$(basename "$1" .cpp)
 short_name=${base_name:3:3}  # 4th to 6th characters
 
+# Avoid reserved Windows device names
+if [[ "$short_name" =~ ^(con|prn|aux|nul|com[1-9]|lpt[1-9])$ ]]; then
+    short_name="safe_${short_name}"
+fi
+
 # Compile with g++, show errors if any
 g++ -std=c++17 -O2 -Wall "$1" -o "$short_name.out"
 if [ $? -ne 0 ]; then
