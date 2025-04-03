@@ -16,7 +16,7 @@ int main() {
         cin >> S[i];
     }
 
-    sort(S.begin(), S.end(), compare);
+    sort(S.begin(), S.end());
 
     string result = "";
     for (auto &s : S) {
