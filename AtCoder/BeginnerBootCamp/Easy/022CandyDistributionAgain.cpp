@@ -8,27 +8,25 @@ int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int N, x; cin>>N>>x;
+    long long  N, x; cin>>N>>x;
 
-    vector<int> A(N);
-
-    for (int i = 0; i < N; i++) {
-        cin >> A[i];
-    }
-
+    vector<long long> A(N);
+    for (long long &a: A ) cin >> a;
+    
     sort(A.begin(), A.end());
-    int count = 0;
 
-    for (int child : A) {
-        if (x - child < 0) {
+    long long count = 0;
+    for (long long a : A) {
+        if (x < a) {
             break;
         } else {
-            x -= child;
-            ++count;
+            x -= a;
+            count++;
         }
     }
 
-    cout << count;
+    if (x > 0 && count == N) count--;
 
+    cout << count << '\n';
     return 0;
 }
