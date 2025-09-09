@@ -10,19 +10,18 @@ int main() {
     cin.tie(0);
     
     int X; cin >> X;
-    int max = 0;
 
+    int max = 1;
 
-    for (int i = 1; i <= (int) log(X) + 1; i++) {
-        for (int j = 0; j < 10; j++) {
-            if (pow(i,j) > X) {
-                break;
-            } else if (pow(i,j) > max) {
+    for (int i = 2; i <= sqrt(X); i++) {
+        for (int j = 2; j <= 10; j++) {
+            if (pow(i,j) <= X && pow(i,j) > max) {
                 max = pow(i,j);
             }
         }
     }
-    
-    cout << max << '\n';
+
+    cout << max;
+
     return 0;
 }
